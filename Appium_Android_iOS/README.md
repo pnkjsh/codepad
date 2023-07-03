@@ -1,5 +1,4 @@
-# AppiumTest_Java_And_iOS
-Appium_Android_iOS
+# Appium_Android_iOS
 -------------------
 **Run Android or IOS tests -** 
 
