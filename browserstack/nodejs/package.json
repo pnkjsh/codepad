@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "This project has been created to demonstrate how BrowserStack Real devices can be conencted and tested",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npx wdio config/android-bs.conf.js",
+    "android": "npx wdio config/android-bs.conf.js",
+    "ios": "npx wdio run config/ios-bs.conf.js"
+  },
+  "keywords": [],
+  "author": "Pankaj Saha",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/browserstack-service": "^8.13.1",
+    "@wdio/local-runner": "^8.13.1",
+    "@wdio/mocha-framework": "^8.12.1"
+  }
+}
