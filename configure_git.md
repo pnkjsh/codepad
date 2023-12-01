@@ -11,7 +11,8 @@ You can configure these globally in your user `~/.gitconfig` file using the `--g
 - Example
 ```
 git config --global http.proxy http://<user>:<pwd>@se1-mwg-p03.schwarz:8081
-&&
+```
+```
 git config --global https.proxy http://<user>:<pwd>@se1-mwg-p03.schwarz:8081
 ```
 
@@ -43,12 +44,20 @@ Consider using any of the following:
 ```
 git config --global --unset http.sslVerify
 ```
-If you choose to make it global then limit it to a URL using 
-the `http.<url>.sslVerify` notation: 
+- Example:
+For a single repo
+```
+git config http.sslVerify false
+```
+For all repo
+```
+git config --global http.sslVerify false
+```
+Sometimes it does not work with Boolean false, then use 
+```
+git config http.sslVerify "false"
+```
 
-```
-git config --global http.https://domain.com.sslVerify false
-```
 #### Handle subsequent SSL protocol errors
 
 If you're still having trouble cloning or fetching and are now getting 
@@ -56,23 +65,15 @@ an `unable to access 'https://...': Unknown SSL protocol error in connection to 
 you may decide to switch off SSL verification for the single operation 
 by using the `-c http.sslVerify=false` option
 
+This won't work with git clone, since you don't yet have the local git repo to be able to set the flag in yet. Therefore in that case:
 ```
-git -c http.sslVerify=false clone https://domain.com/path/to/git
+git -c http.sslVerify=false clone <path>
+cd <directory>
+git config http.sslVerify "false"
 ```
-
-Once cloned, you may decide set this for just this cloned 
-repository's `.git/config` by doing. Notice the absence of the `--global`
-
-```
-git config http.sslVerify false
-```
-
 If you choose to make it global then limit it to a URL using 
 the `http.<url>.sslVerify` notation: 
 
-```
-git config --global http.https://domain.com.sslVerify false
-```
 
 ### Set SSL verification
 If you want to use a updated certificate use this command.
