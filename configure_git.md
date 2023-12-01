@@ -23,7 +23,6 @@ npm config set http://<user>:<password>@proxy.server.com:port
 - Example
 ```
 npm config set proxy http://<user>:<pwd>$@se1-mwg-p03.schwarz:8081
-npm config set https-proxy http://<user>:<pwd>$@se1-mwg-p03.schwarz:8081
 ```
 
 ### Unset a proxy
@@ -43,7 +42,6 @@ Consider using any of the following:
 
 ```
 git config --global --unset http.sslVerify
-git config --global --unset http.https://domain.com.sslVerify
 ```
 If you choose to make it global then limit it to a URL using 
 the `http.<url>.sslVerify` notation: 
